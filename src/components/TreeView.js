@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './tree.css';
 import React, { useEffect, useState } from "react";
 import TreeRow from './TreeRow';
@@ -58,7 +59,7 @@ export default function TreeView() {
 
 
     function findParentNodeList(nodeId, parentsList) {
-        const nodeObj = distortedTree.filter((ele) => ele.id == nodeId)[0];
+        const nodeObj = distortedTree.filter((ele) => ele.id === parseInt(nodeId))[0];
         console.log(nodeObj);
         parentsList.push(nodeId);
         if (nodeObj.parentId === null) {
@@ -69,7 +70,7 @@ export default function TreeView() {
 
     function findChildNodesList(nodeId, childrenList) {
         for (let i = 0; i < distortedTree.length; i++) {
-            if (nodeId == distortedTree[i].parentId) {
+            if (parseInt(nodeId) === distortedTree[i].parentId) {
                 childrenList.push(distortedTree[i].id);
                 findChildNodesList(distortedTree[i].id, childrenList);
             }
