@@ -1,0 +1,35 @@
+.Row {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* border: 1px solid black; */
+    /* background-color: aquamarine; */
+}
+
+.checkbox {
+    width: 25px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.tree-area {
+    padding-left: 10px;
+    /* background-color: aqua; */
+}
+
+.action {
+    display: flex;
+    /* gap: 40; */
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    /* width: max-content; */
+}
+
+.action a {
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 10px;
+    cursor: pointer;
+    /* width: 20px; */
+}
