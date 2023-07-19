@@ -84,7 +84,7 @@ export default function TreeView() {
 
     function updateTreeState(rowId, parentsList, childrenList) {
         if (initialTree.selectedNodes.includes(parseInt(rowId))) {
-            const _updatedNodeList = initialTree.selectedNodes.filter((e) => !(e === parseInt(rowId) || childrenList.includes(e)));
+            const _updatedNodeList = initialTree.selectedNodes.filter((e) => !(e === parseInt(rowId) || childrenList.includes(e) || parentsList.includes(e)));
             dispatch(updateSelectedNodes(_updatedNodeList));
         } else {
             const _updatedNodeList = initialTree.selectedNodes.concat([...childrenList, parseInt(rowId)]);
