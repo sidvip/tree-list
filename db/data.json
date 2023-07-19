@@ -1,0 +1,73 @@
+{
+    "tree": [
+        {
+            "name": "My Account: #949414519",
+            "id": 1,
+            "children": [
+                {
+                    "name": "My Container",
+                    "id": 2,
+                    "children": [
+                        {
+                            "name": "Draft: 1",
+                            "id": 3,
+                            "children": [
+                                {
+                                    "name": "Campaign 1",
+                                    "id": 4,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Users",
+                    "id": 5,
+                    "children": [
+                        {
+                            "name": "User1",
+                            "id": 6,
+                            "children": []
+                        },
+                        {
+                            "name": "User2",
+                            "id": 7,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Main Account: # 4705432867",
+            "id": 8,
+            "children": [
+                {
+                    "name": "AnotherContainerInMainAccount",
+                    "id": 9,
+                    "children": [
+                        {
+                            "name": "Draft: 2",
+                            "id": 10,
+                            "children": [
+                                {
+                                    "name": "helloworld",
+                                    "id": 11,
+                                    "children": []
+                                },
+                                {
+                                    "name": "hello",
+                                    "id": 12,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+    "selectedNodes": []
+}
