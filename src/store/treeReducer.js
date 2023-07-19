@@ -17,6 +17,9 @@ export const counterSlice = createSlice({
             state.distortedTree = action.payload;
         },
         updateSelectedNodes: (state, action) => {
+            /**
+             * Selected nodes are updated through this reducer.
+             */
             state.initialTree.selectedNodes = action.payload;
         }
     },

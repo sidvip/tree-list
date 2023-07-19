@@ -11,12 +11,15 @@ export default function TreeView() {
     let indentIncrement = 0;
     const INDENT_LEVEL = {};
     const [data, setData] = useState(null);
+    // const parentChildRelation = {};
     const { initialTree, distortedTree } = useSelector((state) => state.tree);
     const dispatch = useDispatch();
 
     useEffect(() => {
         parseTree(initialTree);
     }, [initialTree]);
+
+    /** Parses tree read from redux state */
 
     function parseTree(data) {
         const distortedTree = [];
@@ -49,6 +52,7 @@ export default function TreeView() {
     }
 
 
+    /** Select Unselect All functionalities */
     function selectUnselectAll(e) {
         if (e.target.href.indexOf('unselect') > -1) {
             dispatch(updateSelectedNodes([]));
@@ -57,6 +61,9 @@ export default function TreeView() {
         }
     }
 
+
+
+    /** Identifies the clicked nodes nearest parents */
 
     function findParentNodeList(nodeId, parentsList) {
         const nodeObj = distortedTree.filter((ele) => ele.id === parseInt(nodeId))[0];
@@ -68,6 +75,7 @@ export default function TreeView() {
         findParentNodeList(nodeObj.parentId, parentsList);
     }
 
+    /** Identifies the clicked nodes all children */
     function findChildNodesList(nodeId, childrenList) {
         for (let i = 0; i < distortedTree.length; i++) {
             if (parseInt(nodeId) === distortedTree[i].parentId) {
@@ -82,6 +90,8 @@ export default function TreeView() {
         findChildNodesList(nodeId, childrenList);
     }
 
+
+    /** Updating tree state inside Redux store */
     function updateTreeState(rowId, parentsList, childrenList) {
         if (initialTree.selectedNodes.includes(parseInt(rowId))) {
             const _updatedNodeList = initialTree.selectedNodes.filter((e) => !(e === parseInt(rowId) || childrenList.includes(e) || parentsList.includes(e)));
